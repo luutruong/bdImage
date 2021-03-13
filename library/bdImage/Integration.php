@@ -142,6 +142,11 @@ class bdImage_Integration
         ) {
             $width = $unpacked[bdImage_Helper_Data::IMAGE_WIDTH];
             $height = $unpacked[bdImage_Helper_Data::IMAGE_HEIGHT];
+        } elseif (isset($unpacked['attachment_width'])
+            && isset($unpacked['attachment_height'])
+        ) {
+            $width = $unpacked['attachment_width'];
+            $height = $unpacked['attachment_height'];
         }
 
         if ((empty($width) || empty($height)) && $doFetch) {
